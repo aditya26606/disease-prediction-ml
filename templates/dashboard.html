@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Dashboard</title>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+
+body{
+
+margin:0;
+font-family:Poppins;
+background:#f5f7fb;
+
+}
+
+header{
+
+background:linear-gradient(90deg,#2c7be5,#00c6ff);
+
+color:white;
+
+text-align:center;
+
+padding:20px;
+
+font-size:28px;
+
+}
+
+.dashboard-box{
+
+background:white;
+
+width:80%;
+
+margin:auto;
+
+margin-top:40px;
+
+padding:30px;
+
+border-radius:15px;
+
+box-shadow:0px 10px 30px rgba(0,0,0,.2);
+
+}
+
+
+.stats{
+
+display:flex;
+
+justify-content:space-around;
+
+margin-bottom:30px;
+
+}
+
+
+.card{
+
+background:linear-gradient(135deg,#2c7be5,#00c6ff);
+
+color:white;
+
+padding:20px;
+
+width:180px;
+
+border-radius:15px;
+
+text-align:center;
+
+transition:.3s;
+
+}
+
+
+.card:hover{
+
+transform:scale(1.1);
+
+}
+
+canvas{
+
+margin-top:20px;
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+Healthcare Analytics Dashboard
+
+</header>
+
+
+<div class="dashboard-box">
+
+<h2 style="text-align:center;">
+
+Prediction Statistics
+
+</h2>
+
+
+<div class="stats">
+
+
+<div class="card">
+
+<h3>Total Records</h3>
+
+<p id="t">{{ total }}</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>Disease Cases</h3>
+
+<p id="d">{{ disease }}</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>Healthy Cases</h3>
+
+<p id="h">{{ healthy }}</p>
+
+</div>
+
+
+</div>
+
+
+<canvas id="chart"></canvas>
+
+
+</div>
+
+
+<script>
+
+let total = document.getElementById("t").innerText;
+
+let disease = document.getElementById("d").innerText;
+
+let healthy = document.getElementById("h").innerText;
+
+
+new Chart(document.getElementById("chart"),{
+
+type:'bar',
+
+data:{
+
+labels:['Total','Disease','Healthy'],
+
+datasets:[{
+
+label:'Cases',
+
+data:[total,disease,healthy],
+
+borderWidth:2
+
+}]
+
+},
+
+options:{
+
+responsive:true
+
+}
+
+});
+
+
+</script>
+
+
+
+</body>
+
+</html>

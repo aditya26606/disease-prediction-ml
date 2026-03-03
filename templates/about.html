@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>About Project</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        .about-section {
+    padding: 50px;
+    background: #f4f6f9;
+    text-align: center;
+}
+
+.about-box {
+    background: white;
+    width: 60%;
+    margin: auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.1);
+    text-align: left;
+}
+
+.about-box h2 {
+    text-align: center;
+    color: #2c7be5;
+}
+
+.about-box ul {
+    margin-top: 10px;
+}
+
+.about-box li {
+    margin-bottom: 6px;
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Healthcare Data Analytics</h1>
+</header>
+
+<section class="about-section">
+    <div class="about-box">
+        <h2>About This Project</h2>
+        <p>
+            This system predicts diseases based on patient data using 
+            <b>Machine Learning algorithms</b>. It analyzes medical values 
+            and symptoms to assist in early disease detection.
+        </p>
+
+        <h3>🎯 Objectives</h3>
+        <ul>
+            <li>Provide fast disease prediction</li>
+            <li>Support healthcare decision making</li>
+            <li>Use data analytics for better diagnosis</li>
+        </ul>
+
+        <h3>🛠 Technologies Used</h3>
+        <ul>
+            <li>Frontend: HTML, CSS, JavaScript</li>
+            <li>Backend: Python Flask</li>
+            <li>ML: Scikit-learn</li>
+            <li>Database: MySQL / SQLite</li>
+        </ul>
+    </div>
+</section>
+
+</body>
+</html>

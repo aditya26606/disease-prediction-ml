@@ -1,0 +1,38 @@
+body {
+    font-family: Arial;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+header {
+    background: #2c7be5;
+    color: white;
+    padding: 15px;
+}
+
+nav a {
+    color: white;
+    margin: 10px;
+    text-decoration: none;
+}
+
+.hero {
+    padding: 60px;
+    background: #f1f5f9;
+}
+
+.btn {
+    padding: 10px 20px;
+    background: #2c7be5;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+form input, form select, form textarea {
+    display: block;
+    margin: 10px auto;
+    padding: 8px;
+    width: 250px;
+}

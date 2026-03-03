@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="UTF-8">
+<title>Healthcare AI Analytics</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+font-family:Poppins;
+background:#f5f7fb;
+}
+
+/* HEADER */
+
+header{
+
+background:linear-gradient(90deg,#2c7be5,#00c6ff);
+color:white;
+padding:15px 40px;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+}
+
+.logo{
+
+font-size:24px;
+font-weight:bold;
+
+}
+
+nav a{
+
+color:white;
+margin-left:25px;
+text-decoration:none;
+font-weight:600;
+
+}
+
+nav a:hover{
+
+color:yellow;
+
+}
+
+
+/* HERO */
+
+.hero{
+
+height:90vh;
+
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+
+background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+url("https://images.unsplash.com/photo-1576091160550-2173dba999ef");
+
+background-size:cover;
+background-position:center;
+
+color:white;
+
+animation:zoom 8s infinite alternate;
+
+}
+
+@keyframes zoom{
+
+from{
+background-size:100%;
+}
+
+to{
+background-size:110%;
+}
+
+}
+
+
+.hero h1{
+
+font-size:50px;
+
+}
+
+.hero p{
+
+font-size:20px;
+
+}
+
+
+/* BUTTON */
+
+.btn{
+
+padding:15px 35px;
+background:linear-gradient(90deg,#00c6ff,#2c7be5);
+border-radius:40px;
+color:white;
+font-size:18px;
+text-decoration:none;
+
+transition:.3s;
+
+}
+
+.btn:hover{
+
+transform:scale(1.1);
+
+}
+
+
+/* FEATURES */
+
+.features{
+
+display:flex;
+justify-content:center;
+gap:40px;
+padding:50px;
+
+}
+
+.card{
+
+background:white;
+padding:30px;
+width:250px;
+border-radius:15px;
+box-shadow:0 5px 20px rgba(0,0,0,.1);
+transition:.3s;
+
+}
+
+.card:hover{
+
+transform:translateY(-10px);
+
+}
+
+
+/* FOOTER */
+
+footer{
+
+background:#2c7be5;
+color:white;
+text-align:center;
+padding:20px;
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<div class="logo">
+
+Healthcare AI
+
+</div>
+
+<nav>
+
+<a href="/">Home</a>
+<a href="/predict">Predict</a>
+<a href="/dashboard">Dashboard</a>
+<a href="/about">About</a>
+
+</nav>
+
+</header>
+
+
+
+<section class="hero">
+
+<h1>AI Disease Prediction</h1>
+
+<p>Smart Healthcare using Machine Learning</p>
+
+<a href="/predict" class="btn">
+
+Start Prediction
+
+</a>
+
+</section>
+
+
+
+<section class="features">
+
+<div class="card">
+
+<h2>⚡ Fast Prediction</h2>
+
+<p>Instant disease prediction using AI.</p>
+
+</div>
+
+
+<div class="card">
+
+<h2>📊 Dashboard</h2>
+
+<p>Visual analytics and statistics.</p>
+
+</div>
+
+
+<div class="card">
+
+<h2>🧠 Machine Learning</h2>
+
+<p>SVM and KNN prediction models.</p>
+
+</div>
+
+
+</section>
+
+
+
+<footer>
+
+Healthcare Analytics Project 2026
+
+</footer>
+
+
+</body>
+</html>

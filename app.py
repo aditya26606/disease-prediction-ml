@@ -2,13 +2,40 @@ from flask import Flask, render_template, request
 import pickle
 import numpy as np
 import os
+import pandas as pd
+from sklearn.svm import SVC
 
 app = Flask(__name__)
 
-# Load Model
-model = pickle.load(open("model/disease_model.pkl", "rb"))
+MODEL_PATH = "model/disease_model.pkl"
 
-# Home Page
+# ===============================
+# Load or Create Model
+# ===============================
+if not os.path.exists(MODEL_PATH):
+    print("Model not found. Training new model...")
+
+    data = pd.read_csv("data.csv")
+    data = data.iloc[:, 1:]
+
+    risk = data.sum(axis=1)
+    risk = risk.apply(lambda x: 1 if x > 500 else 0)
+
+    X = data
+    y = risk
+
+    model = SVC(kernel='linear')
+    model.fit(X, y)
+
+    os.makedirs("model", exist_ok=True)
+    pickle.dump(model, open(MODEL_PATH, "wb"))
+else:
+    model = pickle.load(open(MODEL_PATH, "rb"))
+
+# ===============================
+# Routes
+# ===============================
+
 @app.route('/')
 def home():
     return render_template('index.html')
@@ -66,10 +93,12 @@ def result():
 
         return render_template("result.html", prediction=output)
 
-    except Exception as e:
+    except:
         return render_template("result.html", prediction="Error in Input Data")
 
-# Important for Deployment
+# ===============================
+# Run App
+# ===============================
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port)
